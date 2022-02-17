@@ -5,13 +5,14 @@ export default function App() {
   const word = 'honky'.toUpperCase();
   const spreadWord = [...word];
 
-  const refs = new Array(5).fill(new Array(5)).map((item) =>
-    item.map(() => {
-      const ref = useRef();
-      return ref;
-    })
+  const refs = new Array(5).fill(
+    new Array(5).map((item) =>
+      item.map(() => {
+        const ref = useRef();
+        return ref;
+      })
+    )
   );
-
   console.log({ refs });
 
   const [submit, setSubmit] = useState({});
